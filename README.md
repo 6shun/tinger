@@ -32,13 +32,21 @@ BPM and Danceability measures were extracted from raw audio files using the Esse
 
 
 # Usage
-<print(tinger('Perfect', eng=True))>
-<print('\n')>
+
+**Offline**\
+The following are sample lines of code to run our Tinger full stack recommendation model directly.
+```
+print(tinger('Perfect', eng=True))
+print('\n')
 print(tinger('雪花落下', eng=False))
 print('\n')
+```
 
+**Online**\
 Tinger’s recommendation model can be accessed via our web app: https://a4fm7jk7kidqp2jf.anvil.app/GE2BAFIVA7CBWAFVOZUKIVQ5 . Our front-end deployment is powered by Anvil, and our “TingerIntegration” Colab notebook acts as our back-end server. As long as the Colab notebook is running, the web app is accessible, and users are able to query functions directly into our Colab notebook through Anvil Cloud Services.
 
+
+# Notes
 
 **Support**\
 Please contact Carin Chang at 21carinc@berkeley.edu if you have any questions or concerns.
@@ -48,15 +56,6 @@ Ryan Park, Andrew Cheng, Carin Chang, Tianhao Wu, Matilda Ju, Wenjia Tong
 
 **Project status**\
 Our Data-X prototype currently focuses on solely English-Mandarin cross recommendations, but our team envisions a future with wider coverage for languages across the world.
-
-
-
-
-
-
-
-
-
 
 
 MIT License
