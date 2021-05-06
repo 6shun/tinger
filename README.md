@@ -1,6 +1,6 @@
 # Description
 
-**DATA-X Tinger Slide Deck**\
+**Data-X Tinger Slide Deck**\
 Link (for UC Berkeley affiliates only):\
 https://docs.google.com/presentation/d/1nPaO_1IeuwvIt6jt_X70j6D0_XfHt5FNj1OgXjfdKL4/edit?usp=sharing
 
