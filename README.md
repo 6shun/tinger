@@ -5,7 +5,10 @@ Link (for UC Berkeley affiliates only):\
 https://docs.google.com/presentation/d/1nPaO_1IeuwvIt6jt_X70j6D0_XfHt5FNj1OgXjfdKL4/edit?usp=sharing
 
 **Mission**\
-Tinger’s mission is to provide these cultural adventurers with a simple, yet highly effective means to explore and learn about another culture: through pop music. Tinger recommends English songs to Mandarin music lovers and Mandarin songs to English music lovers.
+Tinger’s mission is to provide these cultural adventurers with a simple, yet highly effective means to explore and learn about another culture: through pop music. This is Tinger's prototype which recommends English songs to Mandarin music lovers and Mandarin songs to English music lovers.
+
+Take a look at our goals for the Spring 2021 semester:
+<img src="/Images/Scope.png"/>
 
 **How it works**\
 The user will be able to input a song, either in English or mandarin and Tinger will extract data and run four different models independently, including the siamese neural network, BPM detector and chord progression on the audio data and K-nn on the metadata. These four different models will each output a similarity score or difference distance. We then calculate a weighted average of these four values to arrive at a final similarity score between the target song and the comparison songs. Next, we filter out all the songs with romance labels different from the target song and finally output the top 5 most similar songs of the opposite language.
@@ -14,11 +17,15 @@ The user will be able to input a song, either in English or mandarin and Tinger 
 
 In total, we collected over 450 songs for the database we are using to run Tinger.
 
+<img src="/Images/Data.png"/>
+
 Audio files are collected by running a script using the youtube-dl library that downloads MP3 files from YouTube playlists.\
 Other English & Mandarin song information, like lyrics, chord progression, and other metadata (i.e., year published, gender of artist, solo/group, etc.) are collected manually using publicly available online sources.
 
 
 # Models
+
+<img src="/Images/ModelIntegration.png"/>
 
 **1. Metadata: K-Nearest-Neighbors -**\
 We used a K-nn model to determine similarity between the songs in terms of their metadata. We focused on 3 different features: the gender of the artist, the year the song was published and a dummy variable for whether the artist is solo or group. We calculated the euclidean distance between the target song and all the songs in our database of the opposite language and ranked their similarity.
@@ -27,6 +34,7 @@ We used a K-nn model to determine similarity between the songs in terms of their
 For lyrics, we chose a Random forest classifier model that predicted whether a song belongs in the romance category. To train this model, we manually labeled 20% of our database. The model achieved 68% accuracy on the test data and identified the following 10 key works that are most important in differentiating between romance and non romance songs. We then went ahead and ran this model on the rest of the database to create romance labels for all the songs.
 
 **3. Audio: Siamese Neural Networks -**\
+<img src="/Images/SNN-CNN.png"/>
 Created a SNN via keras. Wrote custom functions to: (1) create training pairs, (2) fetch batches during training, and (3) calculate accuracy using 50-way, 100-shot learning. Afterwards, we wrote functions to calculate similarity scores using the SNN, as well to create necessary graphics for further demonstration.
 
 **4. Audio: Chord Progression -**\
@@ -48,6 +56,8 @@ print('\n')
 ```
 
 **Online**\
+
+<img src="/Images/Anvil.png"/>
 Tinger’s recommendation model can be accessed via our web app: https://a4fm7jk7kidqp2jf.anvil.app/GE2BAFIVA7CBWAFVOZUKIVQ5 . Our front-end deployment is powered by Anvil, and our “TingerIntegration” Colab notebook acts as our back-end server. As long as the Colab notebook is running, the web app is accessible, and users are able to query functions directly into our Colab notebook through Anvil Cloud Services.
 
 
