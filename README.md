@@ -12,9 +12,10 @@ The user will be able to input a song, either in English or mandarin and Tinger 
 
 # Data
 
-In total, we collected over 450 songs for the database we are using to run our tinger tool.\
-Audio files are collected by running a script that downloads MP3 files from YouTube playlists.\
-Other English & Mandarin song information - collected the lyrics, chord progression, and other metadata (i.e., year published, gender of artist, solo/group, etc.) manually.
+In total, we collected over 450 songs for the database we are using to run Tinger.
+
+Audio files are collected by running a script using the youtube-dl library that downloads MP3 files from YouTube playlists.\
+Other English & Mandarin song information, like lyrics, chord progression, and other metadata (i.e., year published, gender of artist, solo/group, etc.) are collected manually using publicly available online sources.
 
 
 # Models
