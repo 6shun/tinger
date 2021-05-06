@@ -1,4 +1,14 @@
-# Description
+# Notebook Organization
+
+**Primary notebook**: `TingerIntegration`
+
+Models in Final Stack: `ChordAnalysis`, `RomanceLyricsAnalysis`, `TrainSNN`, `UseSNN`
+
+Data collection and pre-processing: `AudioDownload`, `AudioPreprocessing`, `ExtractBPM`, `MigrateBPMData`, `WAVtoShortMelSpectrogram`
+
+Experiments not needed to run end product: `KNN_BPM`, `KNN_Metadata`
+
+# Project Description
 
 **Data-X Tinger Slide Deck**\
 Link (for UC Berkeley affiliates only):\
