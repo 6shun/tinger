@@ -6,10 +6,11 @@ Tinger’s mission is to provide these cultural adventurers with a simple, yet h
 **How it works**\
 The user will be able to input a song, either in English or mandarin and Tinger will extract data and run four different models independently, including the siamese neural network, BPM detector and chord progression on the audio data and K-nn on the metadata. These four different models will each output a similarity score or difference distance. We then calculate a weighted average of these four values to arrive at a final similarity score between the target song and the comparison songs. Next, we filter out all the songs with romance labels different from the target song and finally output the top 5 most similar songs of the opposite language.
 
-**Data**\
+# Data
+
 In total, we collected over 450 songs for the database we are using to run our tinger tool.\
 Audio files are collected by running a script that downloads MP3 files from YouTube playlists.\
-Other English & Mandarin song information - collected the lyrics, chord progression, and other metadata (i.e., year published, gender of artist, solo/group, etc.) manually.\
+Other English & Mandarin song information - collected the lyrics, chord progression, and other metadata (i.e., year published, gender of artist, solo/group, etc.) manually.
 
 
 # Models
