@@ -15,19 +15,19 @@ Other English & Mandarin song information - collected the lyrics, chord progress
 
 # Models
 
-**Metadata: K-Nearest-Neighbors -**\
+**1. Metadata: K-Nearest-Neighbors -**\
 We used a K-nn model to determine similarity between the songs in terms of their metadata. We focused on 3 different features: the gender of the artist, the year the song was published and a dummy variable for whether the artist is solo or group. We calculated the euclidean distance between the target song and all the songs in our database of the opposite language and ranked their similarity.
 
-**Lyrics: Bag-of-Words and Random Forest -**\
+**2. Lyrics: Bag-of-Words and Random Forest -**\
 For lyrics, we chose a Random forest classifier model that predicted whether a song belongs in the romance category. To train this model, we manually labeled 20% of our database. The model achieved 68% accuracy on the test data and identified the following 10 key works that are most important in differentiating between romance and non romance songs. We then went ahead and ran this model on the rest of the database to create romance labels for all the songs.
 
-**Audio: Siamese Neural Networks -**\
+**3. Audio: Siamese Neural Networks -**\
 Created a SNN via keras. Wrote custom functions to: (1) create training pairs, (2) fetch batches during training, and (3) calculate accuracy using 50-way, 100-shot learning. Afterwards, we wrote functions to calculate similarity scores using the SNN, as well to create necessary graphics for further demonstration.
 
-**Audio: Chord Progression -**\
+**4. Audio: Chord Progression -**\
 We analyzed and compared the intervals of the 8 main chords in the chorus of each song in the databases. First, we converted those chords to numbers using the Nashville number system. Then, we found the difference between each chord (thus all the lists went from having 8 elements to 7) and made a column in our database with all these differences - these are the intervals that we used for each song. Finally, we ran a SequenceMatcher function comparing the input to every single interval list in the database; we were then able to extract the top 10 most similar songs and use those as our recommendations.
 
-**Audio: BPM -**\
+**5. Audio: BPM -**\
 BPM and Danceability measures were extracted from raw audio files using the Essentia library developed by the Music Technology Group of Universitat Pompeu Fabra Barcelona. The actual algorithms used to extract the information include TempoTapDegara and Detrended Fluctuation Analysis.
 
 
