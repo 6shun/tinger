@@ -13,7 +13,10 @@ Take a look at our goals for the Spring 2021 semester:
 **How it works**\
 The user will be able to input a song, either in English or mandarin and Tinger will extract data and run four different models independently, including the siamese neural network, BPM detector and chord progression on the audio data and K-nn on the metadata. These four different models will each output a similarity score or difference distance. We then calculate a weighted average of these four values to arrive at a final similarity score between the target song and the comparison songs. Next, we filter out all the songs with romance labels different from the target song and finally output the top 5 most similar songs of the opposite language.
 
-# Data
+<img src="/Images/Dashboard.png" height="800"/>
+
+
+# The Data
 
 In total, we collected over 450 songs for the database we are using to run Tinger.
 
@@ -23,9 +26,11 @@ Audio files are collected by running a script using the youtube-dl library that 
 Other English & Mandarin song information, like lyrics, chord progression, and other metadata (i.e., year published, gender of artist, solo/group, etc.) are collected manually using publicly available online sources.
 
 
-# Models
+# The Models
+
 
 <img src="/Images/ModelIntegration.png"/>
+
 
 **1. Metadata: K-Nearest-Neighbors -**\
 We used a K-nn model to determine similarity between the songs in terms of their metadata. We focused on 3 different features: the gender of the artist, the year the song was published and a dummy variable for whether the artist is solo or group. We calculated the euclidean distance between the target song and all the songs in our database of the opposite language and ranked their similarity.
