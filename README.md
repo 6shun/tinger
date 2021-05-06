@@ -1,4 +1,4 @@
-Description
++Description+
 
 
 Mission\
@@ -49,6 +49,14 @@ Ryan Park, Andrew Cheng, Carin Chang, Tianhao Wu, Matilda Ju, Wenjia Tong
 
 Project status\
 Our Data-X prototype currently focuses on solely English-Mandarin cross recommendations, but our team envisions a future with wider coverage for languages across the world.
+
+
+
+
+
+
+
+
 
 
 
