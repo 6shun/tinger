@@ -32,8 +32,8 @@ BPM and Danceability measures were extracted from raw audio files using the Esse
 
 
 # Usage
-print(tinger('Perfect', eng=True))
-print('\n')
+<print(tinger('Perfect', eng=True))>
+<print('\n')>
 print(tinger('雪花落下', eng=False))
 print('\n')
 
