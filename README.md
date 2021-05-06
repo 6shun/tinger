@@ -1,42 +1,37 @@
-#Description#
-**Test1**
-###Test2
-##Test3
-#Test4
+**Description**
 
-Mission\
+**Mission**\
 Tinger’s mission is to provide these cultural adventurers with a simple, yet highly effective means to explore and learn about another culture: through pop music. Tinger recommends English songs to Mandarin music lovers and Mandarin songs to English music lovers.
 
-How it works\
+**How it works**\
 The user will be able to input a song, either in English or mandarin and Tinger will extract data and run four different models independently, including the siamese neural network, BPM detector and chord progression on the audio data and K-nn on the metadata. These four different models will each output a similarity score or difference distance. We then calculate a weighted average of these four values to arrive at a final similarity score between the target song and the comparison songs. Next, we filter out all the songs with romance labels different from the target song and finally output the top 5 most similar songs of the opposite language.
 
-Data\
+**Data**\
 In total, we collected over 450 songs for the database we are using to run our tinger tool.\
 Audio files are collected by running a script that downloads MP3 files from YouTube playlists.\
 Other English & Mandarin song information - collected the lyrics, chord progression, and other metadata (i.e., year published, gender of artist, solo/group, etc.) manually.\
 
 
-Models
+**Models**
 
-
-Metadata: K-Nearest-Neighbors -\
+**Metadata: K-Nearest-Neighbors -**\
 We used a K-nn model to determine similarity between the songs in terms of their metadata. We focused on 3 different features: the gender of the artist, the year the song was published and a dummy variable for whether the artist is solo or group. We calculated the euclidean distance between the target song and all the songs in our database of the opposite language and ranked their similarity.
 
-Lyrics: Bag-of-Words and Random Forest -\
+**Lyrics: Bag-of-Words and Random Forest -**\
 For lyrics, we chose a Random forest classifier model that predicted whether a song belongs in the romance category. To train this model, we manually labeled 20% of our database. The model achieved 68% accuracy on the test data and identified the following 10 key works that are most important in differentiating between romance and non romance songs. We then went ahead and ran this model on the rest of the database to create romance labels for all the songs.
 
-Audio: Siamese Neural Networks -\
+**Audio: Siamese Neural Networks -**\
 Created a SNN via keras. Wrote custom functions to: (1) create training pairs, (2) fetch batches during training, and (3) calculate accuracy using 50-way, 100-shot learning. Afterwards, we wrote functions to calculate similarity scores using the SNN, as well to create necessary graphics for further demonstration.
 
-Audio: Chord Progression -\
+**Audio: Chord Progression -**\
 We analyzed and compared the intervals of the 8 main chords in the chorus of each song in the databases. First, we converted those chords to numbers using the Nashville number system. Then, we found the difference between each chord (thus all the lists went from having 8 elements to 7) and made a column in our database with all these differences - these are the intervals that we used for each song. Finally, we ran a SequenceMatcher function comparing the input to every single interval list in the database; we were then able to extract the top 10 most similar songs and use those as our recommendations.
 
-Audio: BPM -\
+**Audio: BPM -**\
 BPM and Danceability measures were extracted from raw audio files using the Essentia library developed by the Music Technology Group of Universitat Pompeu Fabra Barcelona. The actual algorithms used to extract the information include TempoTapDegara and Detrended Fluctuation Analysis.
 
 
-Usage
-	print(tinger('Perfect', eng=True))
+**Usage**
+print(tinger('Perfect', eng=True))
 print('\n')
 print(tinger('雪花落下', eng=False))
 print('\n')
@@ -44,13 +39,13 @@ print('\n')
 Tinger’s recommendation model can be accessed via our web app: https://a4fm7jk7kidqp2jf.anvil.app/GE2BAFIVA7CBWAFVOZUKIVQ5 . Our front-end deployment is powered by Anvil, and our “TingerIntegration” Colab notebook acts as our back-end server. As long as the Colab notebook is running, the web app is accessible, and users are able to query functions directly into our Colab notebook through Anvil Cloud Services.
 
 
-Support\
+**Support**\
 Please contact Carin Chang at 21carinc@berkeley.edu if you have any questions or concerns.
 
-Authors and acknowledgment\
+**Authors and acknowledgment**\
 Ryan Park, Andrew Cheng, Carin Chang, Tianhao Wu, Matilda Ju, Wenjia Tong
 
-Project status\
+**Project status**\
 Our Data-X prototype currently focuses on solely English-Mandarin cross recommendations, but our team envisions a future with wider coverage for languages across the world.
 
 
