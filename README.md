@@ -1,7 +1,8 @@
 # Description
 
 **DATA-X Tinger Slide Deck**\
-Link (for UC Berkeley affiliates only): https://docs.google.com/presentation/d/1nPaO_1IeuwvIt6jt_X70j6D0_XfHt5FNj1OgXjfdKL4/edit?usp=sharing
+Link (for UC Berkeley affiliates only):\
+https://docs.google.com/presentation/d/1nPaO_1IeuwvIt6jt_X70j6D0_XfHt5FNj1OgXjfdKL4/edit?usp=sharing
 
 **Mission**\
 Tinger’s mission is to provide these cultural adventurers with a simple, yet highly effective means to explore and learn about another culture: through pop music. Tinger recommends English songs to Mandarin music lovers and Mandarin songs to English music lovers.
