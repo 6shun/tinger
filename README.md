@@ -1,4 +1,4 @@
-**Description**
+# Description
 
 **Mission**\
 Tinger’s mission is to provide these cultural adventurers with a simple, yet highly effective means to explore and learn about another culture: through pop music. Tinger recommends English songs to Mandarin music lovers and Mandarin songs to English music lovers.
@@ -12,7 +12,7 @@ Audio files are collected by running a script that downloads MP3 files from YouT
 Other English & Mandarin song information - collected the lyrics, chord progression, and other metadata (i.e., year published, gender of artist, solo/group, etc.) manually.\
 
 
-**Models**
+# Models
 
 **Metadata: K-Nearest-Neighbors -**\
 We used a K-nn model to determine similarity between the songs in terms of their metadata. We focused on 3 different features: the gender of the artist, the year the song was published and a dummy variable for whether the artist is solo or group. We calculated the euclidean distance between the target song and all the songs in our database of the opposite language and ranked their similarity.
@@ -30,7 +30,7 @@ We analyzed and compared the intervals of the 8 main chords in the chorus of eac
 BPM and Danceability measures were extracted from raw audio files using the Essentia library developed by the Music Technology Group of Universitat Pompeu Fabra Barcelona. The actual algorithms used to extract the information include TempoTapDegara and Detrended Fluctuation Analysis.
 
 
-**Usage**
+# Usage
 print(tinger('Perfect', eng=True))
 print('\n')
 print(tinger('雪花落下', eng=False))
